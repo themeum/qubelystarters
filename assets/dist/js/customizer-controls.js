@@ -2205,21 +2205,24 @@ ResponsiveControl.propTypes = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _font_family_control__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./font-family/control */ "./inc/Api/Customizer/reactjs/src/font-family/control.js");
-/* harmony import */ var _radio_image_control__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./radio-image/control */ "./inc/Api/Customizer/reactjs/src/radio-image/control.js");
-/* harmony import */ var _range_slider_control__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./range-slider/control */ "./inc/Api/Customizer/reactjs/src/range-slider/control.js");
-/* harmony import */ var _toggle_switch_control__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./toggle-switch/control */ "./inc/Api/Customizer/reactjs/src/toggle-switch/control.js");
-/* harmony import */ var _responsive_range_slider_control__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./responsive-range-slider/control */ "./inc/Api/Customizer/reactjs/src/responsive-range-slider/control.js");
+/* harmony import */ var _typography_control__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./typography/control */ "./inc/Api/Customizer/reactjs/src/typography/control.js");
+/* harmony import */ var _font_family_control__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./font-family/control */ "./inc/Api/Customizer/reactjs/src/font-family/control.js");
+/* harmony import */ var _radio_image_control__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./radio-image/control */ "./inc/Api/Customizer/reactjs/src/radio-image/control.js");
+/* harmony import */ var _range_slider_control__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./range-slider/control */ "./inc/Api/Customizer/reactjs/src/range-slider/control.js");
+/* harmony import */ var _toggle_switch_control__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./toggle-switch/control */ "./inc/Api/Customizer/reactjs/src/toggle-switch/control.js");
+/* harmony import */ var _responsive_range_slider_control__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./responsive-range-slider/control */ "./inc/Api/Customizer/reactjs/src/responsive-range-slider/control.js");
 
 
 
 
 
-wp.customize.controlConstructor.qubelystarters_font_family = _font_family_control__WEBPACK_IMPORTED_MODULE_0__["FontFamilyControl"];
-wp.customize.controlConstructor.qubelystarters_radio_image = _radio_image_control__WEBPACK_IMPORTED_MODULE_1__["RadioImageControl"];
-wp.customize.controlConstructor.qubelystarters_range_slider = _range_slider_control__WEBPACK_IMPORTED_MODULE_2__["RangeSliderControl"];
-wp.customize.controlConstructor.qubelystarters_toggle_switch = _toggle_switch_control__WEBPACK_IMPORTED_MODULE_3__["ToggleSwitchControl"];
-wp.customize.controlConstructor.qubelystarters_responsive_range_slider = _responsive_range_slider_control__WEBPACK_IMPORTED_MODULE_4__["ResponsiveRangeSliderControl"];
+
+wp.customize.controlConstructor.qubelystarters_typography = _typography_control__WEBPACK_IMPORTED_MODULE_0__["TypographyControl"];
+wp.customize.controlConstructor.qubelystarters_font_family = _font_family_control__WEBPACK_IMPORTED_MODULE_1__["FontFamilyControl"];
+wp.customize.controlConstructor.qubelystarters_radio_image = _radio_image_control__WEBPACK_IMPORTED_MODULE_2__["RadioImageControl"];
+wp.customize.controlConstructor.qubelystarters_range_slider = _range_slider_control__WEBPACK_IMPORTED_MODULE_3__["RangeSliderControl"];
+wp.customize.controlConstructor.qubelystarters_toggle_switch = _toggle_switch_control__WEBPACK_IMPORTED_MODULE_4__["ToggleSwitchControl"];
+wp.customize.controlConstructor.qubelystarters_responsive_range_slider = _responsive_range_slider_control__WEBPACK_IMPORTED_MODULE_5__["ResponsiveRangeSliderControl"];
 
 /***/ }),
 
@@ -3835,6 +3838,391 @@ ToggleSwitchComponent.propTypes = {
   control: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.object.isRequired
 };
 /* harmony default export */ __webpack_exports__["default"] = (ToggleSwitchComponent);
+
+/***/ }),
+
+/***/ "./inc/Api/Customizer/reactjs/src/typography/control.js":
+/*!**************************************************************!*\
+  !*** ./inc/Api/Customizer/reactjs/src/typography/control.js ***!
+  \**************************************************************/
+/*! exports provided: TypographyControl */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TypographyControl", function() { return TypographyControl; });
+/* harmony import */ var _typography_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./typography-component */ "./inc/Api/Customizer/reactjs/src/typography/typography-component.js");
+
+var render = wp.element.render;
+var TypographyControl = wp.customize.Control.extend({
+  renderContent: function renderContent() {
+    var control = this;
+    render( /*#__PURE__*/React.createElement(_typography_component__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      control: control
+    }), control.container[0]);
+  }
+});
+
+/***/ }),
+
+/***/ "./inc/Api/Customizer/reactjs/src/typography/typography-component.js":
+/*!***************************************************************************!*\
+  !*** ./inc/Api/Customizer/reactjs/src/typography/typography-component.js ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! prop-types */ "./inc/Api/Customizer/reactjs/node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) {
+  "@babel/helpers - typeof";
+
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    _typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return _typeof(obj);
+}
+
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      ownKeys(Object(source), true).forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys(Object(source)).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) _setPrototypeOf(subClass, superClass);
+}
+
+function _setPrototypeOf(o, p) {
+  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return _setPrototypeOf(o, p);
+}
+
+function _createSuper(Derived) {
+  var hasNativeReflectConstruct = _isNativeReflectConstruct();
+
+  return function _createSuperInternal() {
+    var Super = _getPrototypeOf(Derived),
+        result;
+
+    if (hasNativeReflectConstruct) {
+      var NewTarget = _getPrototypeOf(this).constructor;
+
+      result = Reflect.construct(Super, arguments, NewTarget);
+    } else {
+      result = Super.apply(this, arguments);
+    }
+
+    return _possibleConstructorReturn(this, result);
+  };
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return _assertThisInitialized(self);
+}
+
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function _isNativeReflectConstruct() {
+  if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+  if (Reflect.construct.sham) return false;
+  if (typeof Proxy === "function") return true;
+
+  try {
+    Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+function _getPrototypeOf(o) {
+  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return _getPrototypeOf(o);
+}
+
+
+var __ = wp.i18n.__;
+var SelectControl = wp.components.SelectControl;
+var _wp$element = wp.element,
+    Component = _wp$element.Component,
+    Fragment = _wp$element.Fragment;
+
+var TypographyComponent = /*#__PURE__*/function (_Component) {
+  _inherits(TypographyComponent, _Component);
+
+  var _super = _createSuper(TypographyComponent);
+
+  function TypographyComponent(props) {
+    var _this;
+
+    _classCallCheck(this, TypographyComponent);
+
+    _this = _super.call(this, props);
+    var value = props.control.setting.get();
+    var defaultParams = {
+      weight_default: 700,
+      text_transform: 'none'
+    };
+
+    if (!value) {
+      value = _this.getEmptyValue();
+    }
+
+    if (props.control.params.input_attrs.length) {
+      var input_attrs = JSON.parse(props.control.params.input_attrs);
+
+      if (input_attrs.default_is_empty) {
+        defaultParams = _this.getEmptyDefault();
+      }
+    }
+
+    _this.controlParams = props.control.params.input_attrs ? _objectSpread(_objectSpread({}, defaultParams), JSON.parse(props.control.params.input_attrs)) : defaultParams;
+    _this.state = {
+      fontWeight: value.fontWeight,
+      textTransform: value.textTransform
+    };
+    _this.renderFontWeight = _this.renderFontWeight.bind(_assertThisInitialized(_this));
+    _this.renderTextTransform = _this.renderTextTransform.bind(_assertThisInitialized(_this));
+    _this.updateValues = _this.updateValues.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(TypographyComponent, [{
+    key: "getEmptyValue",
+    value: function getEmptyValue() {
+      var prop = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+      var emptyValue = {
+        fontWeight: 700,
+        textTransform: 'none'
+      };
+
+      if (prop && emptyValue[prop]) {
+        return emptyValue[prop];
+      }
+
+      return emptyValue;
+    }
+  }, {
+    key: "getEmptyDefault",
+    value: function getEmptyDefault() {
+      return {
+        weight_default: 700,
+        text_transform: 'none'
+      };
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/React.createElement(Fragment, null, this.props.control.params.label && /*#__PURE__*/React.createElement("span", {
+        className: "customize-control-title"
+      }, this.props.control.params.label), /*#__PURE__*/React.createElement("div", {
+        className: "qubelystarters-typography-control qubelystarters-background-control"
+      }, this.renderFontWeight(), this.renderTextTransform()));
+    }
+  }, {
+    key: "updateValues",
+    value: function updateValues(value) {
+      this.props.control.setting.set(_objectSpread(_objectSpread({}, this.props.control.setting.get()), value));
+    }
+  }, {
+    key: "renderFontWeight",
+    value: function renderFontWeight() {
+      var _this2 = this;
+
+      return /*#__PURE__*/React.createElement("div", {
+        className: "select-inline font-weight"
+      }, /*#__PURE__*/React.createElement("span", {
+        className: "customize-control-title"
+      }, __('Font Weight', 'qubelystarters')), /*#__PURE__*/React.createElement(SelectControl, {
+        value: this.state.fontWeight,
+        options: [{
+          value: 'none',
+          label: __('None', 'qubelystarters')
+        }, {
+          value: 100,
+          label: '100'
+        }, {
+          value: 200,
+          label: '200'
+        }, {
+          value: 300,
+          label: '300'
+        }, {
+          value: 400,
+          label: '400'
+        }, {
+          value: 500,
+          label: '500'
+        }, {
+          value: 600,
+          label: '600'
+        }, {
+          value: 700,
+          label: '700'
+        }, {
+          value: 800,
+          label: '800'
+        }, {
+          value: 900,
+          label: '900'
+        }],
+        onChange: function onChange(fontWeight) {
+          _this2.setState({
+            fontWeight: fontWeight
+          });
+
+          _this2.updateValues({
+            fontWeight: fontWeight
+          });
+        }
+      }));
+    }
+  }, {
+    key: "renderTextTransform",
+    value: function renderTextTransform() {
+      var _this3 = this;
+
+      return /*#__PURE__*/React.createElement("div", {
+        className: "select-inline text-transform"
+      }, /*#__PURE__*/React.createElement("span", {
+        className: "customize-control-title"
+      }, __('Text Transform', 'qubelystarters')), /*#__PURE__*/React.createElement(SelectControl, {
+        value: this.state.textTransform,
+        options: [{
+          value: 'none',
+          label: __('None', 'qubelystarters')
+        }, {
+          value: 'capitalize',
+          label: __('Capitalize', 'qubelystarters')
+        }, {
+          value: 'lowercase',
+          label: __('Lowercase', 'qubelystarters')
+        }, {
+          value: 'uppercase',
+          label: __('Uppercase', 'qubelystarters')
+        }],
+        onChange: function onChange(textTransform) {
+          _this3.setState({
+            textTransform: textTransform
+          });
+
+          _this3.updateValues({
+            textTransform: textTransform
+          });
+        }
+      }));
+    }
+  }]);
+
+  return TypographyComponent;
+}(Component);
+
+TypographyComponent.propTypes = {
+  control: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.object.isRequired
+};
+/* harmony default export */ __webpack_exports__["default"] = (TypographyComponent);
 
 /***/ }),
 

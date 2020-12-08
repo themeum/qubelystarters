@@ -8,6 +8,7 @@
 namespace Qubely_Starters\Api\Customizer\General;
 
 use WP_Customize_Control;
+use Qubely_Starters\Api\Customizer\Custom_Controls\Typography_Control;
 use Qubely_Starters\Api\Customizer\Custom_Controls\Font_Family_Control;
 use Qubely_Starters\Api\Customizer\Custom_Controls\Responsive_Range_Slider_Control;
 
@@ -165,6 +166,33 @@ class Typography {
 							'mobile'  => 20,
 							'tablet'  => 20,
 							'desktop' => 20,
+						),
+					),
+				)
+			)
+		);
+
+		// Body Typography
+		$wp_customize->add_setting(
+			'body_typography',
+			array(
+				'title'     => esc_html__( 'Body Typography', 'qubelystarters' ),
+				'transport' => 'postMessage',
+				'default'   => '{"fontWeight": 700, "textTransform": "none"}',
+				
+			)
+		);
+		$wp_customize->add_control(
+			new Typography_Control(
+				$wp_customize,
+				'body_typography',
+				array(
+					'label'       => esc_html__( 'Body Typography', 'qubelystarters' ),
+					'section'     => 'qubelystarters_typography_section',
+					'input_attrs' => array(
+						'defaultParams' => array(
+							'weight_default'  => 700,
+							'text_transform'  => 'none',
 						),
 					),
 				)
