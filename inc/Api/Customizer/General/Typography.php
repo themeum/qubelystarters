@@ -190,9 +190,29 @@ class Typography {
 					'label'       => esc_html__( 'Body Typography', 'qubelystarters' ),
 					'section'     => 'qubelystarters_typography_section',
 					'input_attrs' => array(
+						'font_sizes' => array(
+							'min'        => 8,
+							'max'        => 100,
+							'units'      => array( 'px' )
+						),
+						'line_heights' => array(
+							'min'        => 0,
+							'max'        => 100,
+							'units'      => array( 'px' )
+						),
 						'defaultParams' => array(
 							'weight_default'  => 700,
 							'text_transform'  => 'none',
+							'font_sizes' => array(
+								'mobile'  => 13,
+								'tablet'  => 13,
+								'desktop' => 16,
+							),
+							'line_heights' => array(
+								'mobile'  => 20,
+								'tablet'  => 20,
+								'desktop' => 20,
+							)
 						),
 					),
 				)
