@@ -12,6 +12,16 @@ class TypographyComponent extends Component {
 		let defaultParams = {
 			weight_default: 700,
 			text_transform: 'none',
+			font_sizes:{
+				desktop: 16,
+				mobile: 13,
+				tablet: 13,
+			},
+			line_heights:{
+				desktop: 20,
+				mobile: 20,
+				tablet: 20,
+			},
 		};
 
 		if (!value) {
@@ -31,24 +41,30 @@ class TypographyComponent extends Component {
 			}
 			: defaultParams;
 
+		const defaultFontSizes = {
+			...defaultParams.font_sizes,
+			...this.controlParams.defaultParams.font_sizes
+		}
+
+		const defaultLineHeights = {
+			...defaultParams.line_heights,
+			...this.controlParams.defaultParams.line_heights,
+		}
+
 		this.state = {
 			currentDevice: 'desktop',
-			defaultFontSizes: {
-				desktop: 16,
-				mobile: 13,
-				tablet: 13,
-				...this.controlParams.defaultParams.font_sizes
-			},
-			defaultLineHeights: {
-				desktop: 20,
-				mobile: 20,
-				tablet: 20,
-				...this.controlParams.defaultParams.line_heights
-			},
+			defaultFontSizes,
+			defaultLineHeights,
 			fontWeight: value.fontWeight,
 			textTransform: value.textTransform,
-			fontSize: value.fontSize,
-			lineHeight: value.lineHeight,
+			fontSize: {
+				...defaultFontSizes,
+				...(typeof value.fontSize !== 'undefined' && value.fontSize)
+			},
+			lineHeight: {
+				...defaultLineHeights,
+				...(typeof value.lineHeight !== 'undefined' && value.lineHeight)
+			},
 		};
 
 		this.renderFontSize = this.renderFontSize.bind(this);
