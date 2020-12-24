@@ -178,8 +178,10 @@ class Typography {
 			array(
 				'title'     => esc_html__( 'Body Typography', 'qubelystarters' ),
 				'transport' => 'postMessage',
-				'default'   => '{"fontWeight": 700, "textTransform": "none"}',
-				
+				'default' => array(
+					'fontWeight'        => 700,
+					'textTransform'     => 'none',
+				),
 			)
 		);
 		$wp_customize->add_control(
